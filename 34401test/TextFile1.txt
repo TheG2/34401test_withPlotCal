@@ -1,1 +1,3 @@
 ﻿TEsting Git. Add this file to the master to have a change to commit
+
+Adding a line to make a change. Local VerifyOperation Branch checkout.
