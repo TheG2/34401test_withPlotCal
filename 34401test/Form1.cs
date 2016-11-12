@@ -41,6 +41,9 @@ using System.IO;
 // 1-26-16 more cleanup: cleanup openInit Routines
 // Created separate routines to readback the ESG and DMM configure. Moved of the config routine
 // deleting batch testing button. THis works now. btnBatchMeasure_Click
+// 11-12-16 publishing to git from VS2015. Verifying basic funtionality of this version.
+// form1 has very rough layout, and command buttons are use to intiate conept testing features. 
+// more details will be place in the Wiki on GitHub to try out the wiki feature and document this app.
 
 
 namespace _34401test
