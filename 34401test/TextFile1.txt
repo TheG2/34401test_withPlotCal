@@ -1,1 +1,15 @@
 ﻿TEsting Git. Add this file to the master to have a change to commit
+
+
+
+
+
+
+
+
+
+
+
+
+This line was added while local master is checked out. Should be possible to merge with other branch without
+issues.
