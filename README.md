@@ -37,6 +37,12 @@ will popup.
 **Results shown in graph used Agilent E4438C  as RF SigGen**
 ![FREQ SWEEP EXAMPLE](FreqSweepExamplePlot.png)
 
+**Video of freq:** An version with slightly different layout is used in the video, but the it includes
+entering the VISA_ID, Freq Sweep Params, and the performing a few sweeps.
+
+
+[Freq Sweep Video](https://www.youtube.com/watch?v=OFMz4BTxJdA&t=0s)
+
 **Contributing:** A secondary purpose of this effort is testing a SQL schema and class definition for test object. 
 The SQL schema and test object classes are used in another Test data management application effort. Any ides or insights
 about Test data management approach with a bias toward RF and Satcom equipment would be welcomed. 
