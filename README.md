@@ -29,9 +29,6 @@ with VISA_IDs.
 * Configure the ESG for the desired sweep using the "CONFIGURE" Button in middle-right of GUI.
 * INITiate a measurement using the "MEASURE" command button. Equipment should go into action then results graph
 will popup. 
-[IMAGE OF FORM WITH BAD ANNOTATIONs](https://73.162.230.202:488/34401DMM_ESG_MainForm.png)
-
-![GUI SCREENSHOT](/34401DMM_ESG_MainForm.png)
 
 ![GUI SCREENSHOT](34401DMM_ESG_MainForm.png)
 
