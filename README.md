@@ -32,6 +32,10 @@ will popup.
 
 ![GUI SCREENSHOT](34401DMM_ESG_MainForm.png)
 
+
+**EXAMPLE OF FREQUENCY SWEEP RESULTS**
+**Results shown in graph used Agilent E4438C  as RF SigGen**
+![FREQ SWEEP EXAMPLE](FreqSweepExamplePlot.png)
 **Contributing:** A secondary purpose of this effort is testing a SQL schema and class definition for test object. 
 The SQL schema and test object classes are used in another Test data management application effort. Any ides or insights
 about Test data management approach with a bias toward RF and Satcom equipment would be welcomed. 
