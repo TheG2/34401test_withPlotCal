@@ -1,20 +1,52 @@
-# 34401test_withPlotCal
-34401Test_withPlotCal push from ZenBook 
-C# Visa 34401 DVM, External Trigger, to Array with ESG sigGen Sweep Trigger out to DVM
-Setup: 34401 connected via GPIB, ESG connected via ENET(TCP/IP). 
-Trigger out on ESG is connect to External Trigger of DVM via bnc. 
+**Project Name:** DMM_ESG_RFtoDCSweeps
 
-Required: Agilent(Keysight) VISA or NI VISA library as the code accesses by VISA resource ID.
-VS and C# on WIN7 box was used to create the application.
+**Description:** Automated test app for measuring RF input to DCV output transfer characteristics of 
+RF detectors. An ESG RF signal generator, with step/list option, is creates the freq or pwr swept signal. 
+Standard 34401 DMM is used to DC level. The ESG trigger output is connected to the DMM external trigger. A square wave transition at each freq or pwr point in the sweep trigger the DVM. Results are stored using in memory DataTables
+and presented in Chart object. Several tests can be define in a test file, then performed as a batch of test 
+with no user input required[ ie a test sequencer. The project is developed in VS2015 C#, VISA, IVI-COM, WIN7. ( more less concise details in last section of the this page.)
 
-Basic Purpose: ESG is commanded to perform a freq or power sweep with 20-25ms dwells at each step. A square wave identifies each
-step in the swept. THe RF output from the ESG is connected to a RF-to-DC detector. 
-The DC output from detector is connected to the DVM. The DVM is triggered by the square wave and measure voltage for each step 
-in the sweep and place the measurement in the buffer.
+**Table of Contents:**
 
-Results are pulled from the DVM into an array and plotted using chart object.
-Mutliple tests can be identified in a text file then the set of test performed unattended. 
-Results are written to a text file as CSV for easy importing into other apps like excel. 
-Sort of a simple test sequencer. Using the trigger output from ESGs and the power/freq step feature
-is often overlooked, but fast swept scalar measurements can be performed with realtime monitoring. 
-Hopefully shares some ideas.
+**Installation:** To install this application on a WIN7 PC, clone to your local machine. Additional components are
+required.  The following items should be download and installed. An installer can be created using the VS deploy feature, then installed via the output of deploy. Running in development mode with VS is fine for some scenarios.
+* [IVI-COM Shared Components, IVIFoundation](http://www.ivifoundation.org/)
+* [Keysight IVI-COM DMM Driver](http://www.keysight.com/main/software.jspx?cc=US&lc=eng&nid=-11143.0.00&id=1494698&pageMode=PV)
+*[Keysight IVI-COM RF SigGen Driver](http://www.keysight.com/main/software.jspx?ckey=1669133&lc=eng&cc=US&nid=-11143.0.00&id=1669133)
+*[VISA library Keysight](http://www.keysight.com/main/software.jspx?cc=US&lc=eng&ckey=2175637&nid=-536900526.697048.02&id=2175637&cmpid=zzfindiosuitedownload)
+
+**USAGE:** Assuming the application, IVI-COM drivers, and VISA library are installed.
+#### SETUP / PARAM ENTRY 
+* Connect DVM ext trigger input to RF sig gen Trigger output via BNC.
+* Connect RF SigGen O/P to Detector RF input.
+* Connect RF detector DC output to DMM input. ...
+* Open the app, then open the VISA utility to view devices connected to the PC. 
+  * Copy the VISA_ID for the RF SigGen and DMM and paste into the textboxes at the top left of the form. 
+* Selecting  desired sweep type, pwr or freq, using the radio box in middle of the form.  
+* Enter the start, stop, step size, and Point into textboxes to left or right of the radio boxes.  
+* Open and INITialize the DMM and SigGen with command buttons to right of the textboxes 
+with VISA_IDs. 
+* Configure the ESG for the desired sweep using the "CONFIGURE" Button in middle-right of GUI.
+* INITiate a measurement using the "MEASURE" command button. Equipment should go into action then results graph
+will popup. 
+[IMAGE OF FORM WITH BAD ANNOTATIONs](https://73.162.230.202:488/34401DMM_ESG_MainForm.png)
+
+
+**Contributing:** A secondary purpose of this effort is testing a SQL schema and class definition for test object. 
+The SQL schema and test object classes are used in another Test data management application effort. Any ides or insights
+about Test data management approach with a bias toward RF and Satcom equipment would be welcomed. 
+
+**Credits:** Players to be named later...
+
+**License:**
+
+
+**Less Concise Description Parts:**
+
+ C# Desktop test application for characterizing the Rf-to-DC transfer characteristic of typical RF detector diodes. Two pieces of test equipment are used: an ESG Signal Generator, HP34401A or similar DVM. Communication with the DVM and Signal Generator is accomplished with VISA. IVI-COM drivers for the DMM were used for development ease. Code comments sometime include the SCPI equivalent commands to the method and properties accessible with the IVI-COM drivers. DVM external trigger is connected to ESG trigger output. Square Wave transition at each point in ESG swept initiates a DC measurement.
+
+The batch testing feature is inspired by high dollar and heavy PC overhead "test sequencers". The simple lightweight approach allowed for hundred of unattended swept RF to DC transfer measurements to be completed and results graphed in short period. Eventually want to add feature to output/write results to database. Currently experimenting with Relation and MongodB for the data.  Trending towards mongoDB for flexible schema. 
+
+HOpefully other find this and get some utility from the initial branch. 
+
+Check out the pages on the wiki.
