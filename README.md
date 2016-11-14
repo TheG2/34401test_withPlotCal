@@ -12,8 +12,8 @@ with no user input required[ ie a test sequencer. The project is developed in VS
 required.  The following items should be download and installed. An installer can be created using the VS deploy feature, then installed via the output of deploy. Running in development mode with VS is fine for some scenarios.
 * [IVI-COM Shared Components, IVIFoundation](http://www.ivifoundation.org/)
 * [Keysight IVI-COM DMM Driver](http://www.keysight.com/main/software.jspx?cc=US&lc=eng&nid=-11143.0.00&id=1494698&pageMode=PV)
-*[Keysight IVI-COM RF SigGen Driver](http://www.keysight.com/main/software.jspx?ckey=1669133&lc=eng&cc=US&nid=-11143.0.00&id=1669133)
-*[VISA library Keysight](http://www.keysight.com/main/software.jspx?cc=US&lc=eng&ckey=2175637&nid=-536900526.697048.02&id=2175637&cmpid=zzfindiosuitedownload)
+* [Keysight IVI-COM RF SigGen Driver](http://www.keysight.com/main/software.jspx?ckey=1669133&lc=eng&cc=US&nid=-11143.0.00&id=1669133)
+* [VISA library Keysight](http://www.keysight.com/main/software.jspx?cc=US&lc=eng&ckey=2175637&nid=-536900526.697048.02&id=2175637&cmpid=zzfindiosuitedownload)
 
 **USAGE:** Assuming the application, IVI-COM drivers, and VISA library are installed.
 #### SETUP / PARAM ENTRY 
